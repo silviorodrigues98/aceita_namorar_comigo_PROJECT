@@ -7,7 +7,7 @@ Acesse em: [Pagina quer namorar comigo?](https://aceita-namorar-comigo-project.v
 
 > Como usar
 
- 1. Clonar projeto `[silviorodrigues98/aceita_namorar_comigo_PROJECT (github.com)](https://github.com/silviorodrigues98/aceita_namorar_comigo_PROJECT)`
+ 1. Clonar projeto `git clone https://github.com/silviorodrigues98/aceita_namorar_comigo_PROJECT)`
  2. Execute o comando para instalar dependências: `npm install`
  3. Inicie o servidor, rodando `node index.js`
  4. Acesse o servidor em [http://localhost:3000](http://localhost:3000)
