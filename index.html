@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("romantica.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #noButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+        }
+
+        #noButton,
+        #yesButton {
+            display: inline-block;
+            border-radius: 50px;
+            background-color: pink;
+            color: black;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        #yesButton {
+            position: absolute;
+            left: 50%;
+            margin-top: 10%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            margin-top: 2%;
+            font-family: cursive;
+            pointer-events: none;
+            caret-color: transparent;
+            /* Add this line */
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="h2Element">VOCE ACEITA NAMORAR COMIGO!?!</h2>
+    <button id="yesButton">SIMMMMMMM ❤️🥰</button>
+    <button id="noButton">NAO.</button>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+        const h2Element = document.getElementById('h2Element');
+
+        h2Element.addEventListener('click', () => {
+            // Add your desired behavior here
+            alert('You clicked the h2 element!');
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const yesButtonRect = yesButton.getBoundingClientRect();
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+
+            let randomX = Math.random() * maxX;
+            let randomY = Math.random() * maxY;
+
+            // Ensure that the noButton never goes above the yesButton
+            if (randomX > yesButtonRect.left && randomX < yesButtonRect.right &&
+                randomY > yesButtonRect.top && randomY < yesButtonRect.bottom) {
+                randomX = Math.random() * maxX;
+                randomY = Math.random() * maxY;
+            }
+
+            noButton.style.top = `${randomY}px`;
+            noButton.style.left = `${randomX}px`;
+        });
+
+        yesButton.addEventListener('click', () => {
+            // Add your desired behavior here
+            alert('AH, MUITO BEM!!! AGORA CLIQUE OK PRA TER UMA SURPRESA!!!');
+            window.location.href = 'https://www.youtube.com/watch?v=WLtVtMdRvmo'; // Replace with the URL of the new page
+        });
+    </script>
+</body>
+
+</html>
